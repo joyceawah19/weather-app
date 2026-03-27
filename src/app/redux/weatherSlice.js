@@ -40,6 +40,7 @@ export const fetchWeather = createAsyncThunk(
       // ✅ Format response depending on API
       if (lat && lon) {
         const data = response.data.current;
+        const location = response.data.location;
 
         return {
           temp: data.temp_c,
@@ -47,9 +48,12 @@ export const fetchWeather = createAsyncThunk(
           icon: data.condition.icon,
           humidity: data.humidity,
           wind: data.wind_kph,
+         city: location.name,
+         country: location.country,
         };
       } else {
         const data = response.data.forecast.forecastday[0].day;
+                const location = response.data.location;
 
         return {
           temp: data.avgtemp_c,
@@ -57,6 +61,8 @@ export const fetchWeather = createAsyncThunk(
           icon: data.condition.icon,
           humidity: data.avghumidity,
           wind: data.maxwind_kph,
+           city: location.name,
+            country: location.country,
         };
       }
 

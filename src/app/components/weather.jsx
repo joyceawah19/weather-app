@@ -10,11 +10,7 @@ export default function Weather() {
   const [date, setDate] = useState("");
 
   const dispatch = useDispatch();
-  const {
-    data: weather,
-    loading,
-    error,
-  } = useSelector((state) => state.weather);
+  const { data: weather,loading, error, } = useSelector((state) => state.weather);
 
   const handleFetch = () => {
     if (!city || !date) return alert("Enter city and date");
@@ -38,8 +34,8 @@ export default function Weather() {
   }, [dispatch]  )
 
   return (
-    <div className="flex justify-center bg-[#c5cfe3] " >
-    <div className="bg-gradient-to-r from-[hsl(220,60%,56%)] to-[hsl(236,60%,36%)] text-white shadow-lg rounded-2xl p-6 w-full h-full max-w-md mt-[20px]">
+    <div className="flex justify-center bg-[hsl(116,36%,91%)] min-h-screen "  >
+    <div className="bg-gradient-to-r from-[hsl(117,61%,53%)] to-[hsl(114,92%,20%)] min-h-scre max-h-fit text-white shadow-lg rounded-2xl p-6 w-full h-full max-w-md lg:mt-[20px] mt-[0px]">
       <h1 className="text-2xl  text-white font-bold text-center mb-4">
         Weather Checker
       </h1>
@@ -72,6 +68,7 @@ export default function Weather() {
         <div className="mt-6 text-center">
           <img src={weather.icon} alt="weather icon"  className="mx-auto color-white h-[150px] w-[150px] " />
           <h2 className="text-xl font-semibold mb-[20px]">{weather.condition}</h2>
+          <p className="text-semibold py-6 ">{weather.city}, {weather.country} </p>
           <div className=" flex justify-center items-center gap-[20px] ">
             <Image src={"/wi-thermometer.svg"} height={50} width={50} alt="temp" className="invert" />
             <p> Temp: {weather.temp}°C</p>
