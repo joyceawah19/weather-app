@@ -34,8 +34,8 @@ export default function Weather() {
   }, [dispatch]  )
 
   return (
-    <div className="flex justify-center bg-[hsl(116,36%,91%)] min-h-screen "  >
-    <div className="bg-gradient-to-r from-[hsl(117,61%,53%)] to-[hsl(114,92%,20%)] min-h-scre max-h-fit text-white shadow-lg rounded-2xl p-6 w-full h-full max-w-md lg:mt-[20px] mt-[0px]">
+    <div className="flex justify-center bg-[hsl(116,36%,91%)] min-h-screen py-0 lg:py-[20px]"  >
+    <div className="bg-gradient-to-r from-[hsl(117,61%,53%)] to-[hsl(114,92%,20%)] min-h-screen  text-white shadow-lg lg:rounded-2xl p-6 w-full h-full max-w-md lg:mt-[20px] mt-[0px]">
       <h1 className="text-2xl  text-white font-bold text-center mb-4">
         Weather Checker
       </h1>
